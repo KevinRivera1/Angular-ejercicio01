@@ -3,55 +3,41 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
+
 import { UserComponent } from './user/user/user.component';
-import { HeaderComponent } from './static/header/header.component';
-import { NavComponent } from './static/nav/nav.component';
-import { FooterComponent } from './static/footer/footer.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
-import { BreadcrumbsComponent } from './static/breadcrumbs/breadcrumbs.component';
-import { SidebarComponent } from './static/sidebar/sidebar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { CatalogueComponent } from './pages/catalogue/catalogue.component';
-import { ProductComponent } from './pages/product/product.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesComponent } from './pages/pages.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 
 
+import { StaicComponent } from './static/staic.component';
+import { AuthComponent } from './auth/auth.component';
+
+import { StaticModule } from './static/static.module';
+import { PagesModule } from './pages/pages.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent,
     UserComponent,
-
-    HeaderComponent,
-    NavComponent,
-    FooterComponent,
-    DashboardComponent,
-    BreadcrumbsComponent,
-    SidebarComponent,
     NotFoundComponent,
-    CatalogueComponent,
-    ProductComponent,
     PagesComponent,
-    LoginComponent,
-    RegisterComponent,
-
+    AuthComponent,
+    StaicComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    StaticModule,
+    PagesModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
