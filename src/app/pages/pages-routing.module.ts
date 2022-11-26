@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, StaticModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, StaticModule,RouterModule.forChild(routes)],
 })
 export class PagesRoutingModule { }
