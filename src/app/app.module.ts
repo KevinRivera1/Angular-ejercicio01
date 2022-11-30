@@ -13,6 +13,7 @@ import { PagesComponent } from './pages/pages.component';
 import { StaicComponent } from './static/staic.component';
 import { UserComponent } from './user/user/user.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
