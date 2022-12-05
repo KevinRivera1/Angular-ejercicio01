@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
 import { StaticModule } from './static/static.module';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -30,6 +31,7 @@ import { UserComponent } from './user/user/user.component';
     AuthModule,
     StaticModule,
     PagesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
