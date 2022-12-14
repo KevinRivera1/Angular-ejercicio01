@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { PagesModule } from './pages/pages.module';
+
 import { StaticModule } from './static/static.module';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PagesComponent } from './pages/pages.component';
 import { StaicComponent } from './static/staic.component';
 import { UserComponent } from './user/user/user.component';
+import { PagesModule } from './pages/pages.module';
 
 
 @NgModule({
