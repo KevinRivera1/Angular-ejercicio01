@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 
 import { StaticModule } from './static/static.module';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -32,7 +34,8 @@ import { PagesModule } from './pages/pages.module';
     AuthModule,
     StaticModule,
     PagesModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,5 @@
+import { UpdateProductDto } from './../../Modules/product.modul';
+import { ProductModel } from 'src/app/Modules/product.modul';
 import { ProductHttpService } from './../../Services/productHttp.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -9,20 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private productHttpService: ProductHttpService) { }
+  products: ProductModel[] = [];
+  selectProduct: UpdateProductDto={};
 
+  page: number = 1;
+  constructor(private productHttpService: ProductHttpService) {
+    this.initProduct();
+   }
 
+  initProduct() {
+    this. selectProduct={title:"",price:0,description:""}
+   }
   ngOnInit(): void {
-    //this.getProducts();
+    this.getProducts();
     //this.getProduct();
     //this.updateProduct();
     //this.deleteProduct();
     //this.createProduct()
   }
 
+
   getProducts() {
     this.productHttpService.getAll().subscribe((response) => {
-      console.log(response);
+      this.products = response;
     });
   }
 
@@ -31,8 +42,6 @@ export class ProductComponent implements OnInit {
       console.log(response);
     });
   }
-
-
   createProduct() {
     const data = {
       title: 'Creado hola',
@@ -58,9 +67,14 @@ export class ProductComponent implements OnInit {
       console.log(response);
     });
   }
+  
+  editProduct(product:ProductModel){
+    this.selectProduct=product;
+  }
 
-  deleteProduct() {
-    this.productHttpService.destroy(2).subscribe((response: any) => {
+  deleteProduct(id: ProductModel['id']) {
+    this.productHttpService.destroy(id).subscribe((response: any) => {
+      this.products = this.products.filter(product => product.id != id);
       console.log(response);
     });
   }
